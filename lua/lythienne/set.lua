@@ -26,6 +26,14 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         vim.cmd("cd %:h")
-        vim.cmd("Neotree")
     end,
+})
+vim.cmd([[colorscheme everforest]])
+
+vim.lsp.config('clangd', {
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
 })
